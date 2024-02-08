@@ -4,6 +4,7 @@
     "pk": 1, 
     "fields": {  
       "id": 1,
+      "icon": "Edit",
       "title": "计算器",  
       "description": "111"  
     }  
@@ -13,6 +14,7 @@
     "pk": 2,  
     "fields": {  
       "id": 2,
+      "icon": "Message",
       "title": "计算器2",  
       "description": "222"  
     }  
