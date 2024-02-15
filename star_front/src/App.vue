@@ -3,27 +3,27 @@
     <el-header>StartTool</el-header>
     <el-main>
       <div class="tool-box">
-        <el-button id="tool-button"><font-awesome-icon :icon="['fas', 'recycle']" size="3x"/></el-button>
+        <el-button id="tool-button" @click="showUnitConvertBox=true"><font-awesome-icon :icon="['fas', 'recycle']" size="3x"/></el-button>
         <p style="color:#b8b6c1;">单位转换器</p>
+        <unit-convert :show.sync="showUnitConvertBox" @close="showUnitConvertBox=false"></unit-convert>
       </div>
-
-      <!-- <div class="tool-box" v-for="tool in toolList" :key="tool.id">
-        <el-button :icon="tool.icon" />
-        <div>{{ tool.title }}</div>
-      </div> -->
     </el-main>
   </el-container>
 </template>
 
 <script>
 // import Api from './Api'
-// import HelloWorld from './components/HelloWorld.vue'
+import UnitConvert from './components/unit_convert.vue'
 
 export default {
   name: 'App',
+  components: {  
+    UnitConvert
+  },
   data() {
     return {
-      toolList: []
+      toolList: [],
+      showUnitConvertBox: false
     }
   }
 }
