@@ -1,11 +1,21 @@
 <template>
   <el-container>
     <el-header>StartTool</el-header>
-    <el-main>
+    <el-main style="display: flex; justify-content:flex-start">
       <div class="tool-box">
-        <el-button id="tool-button" @click="showUnitConvertBox=true"><font-awesome-icon :icon="['fas', 'recycle']" size="3x"/></el-button>
+        <el-button id="tool-button" @click="showUnitConvertBox=true"><font-awesome-icon class="icon" :icon="['fas', 'recycle']" size="3x"/></el-button>
         <p style="color:#b8b6c1;">单位转换器</p>
         <unit-convert :show.sync="showUnitConvertBox" @close="showUnitConvertBox=false"></unit-convert>
+      </div>
+      <div class="tool-box">
+        <el-button id="tool-button" @click="showExchangeRateConvertBox=true"><font-awesome-icon class="icon" :icon="['fas', 'coins']" size="3x"/></el-button>
+        <p style="color:#b8b6c1;">汇率换算</p>
+        <exchange-rate-convert :show.sync="showExchangeRateConvertBox" @close="showExchangeRateConvertBox=false"></exchange-rate-convert>
+      </div>
+      <div class="tool-box">
+        <el-button id="tool-button" @click="showWifiCrackBox=true"><font-awesome-icon class="icon" :icon="['fas', 'wifi']" size="3x"/></el-button>
+        <p style="color:#b8b6c1;">WIFI 破解</p>
+        <exchange-rate-convert :show.sync="showWifiCrackBox" @close="showWifiCrackBox=false"></exchange-rate-convert>
       </div>
     </el-main>
   </el-container>
@@ -14,16 +24,19 @@
 <script>
 // import Api from './Api'
 import UnitConvert from './components/unit_convert.vue'
+import ExchangeRateConvert from './components/exchange_rate_convert.vue'
 
 export default {
   name: 'App',
   components: {  
-    UnitConvert
+    UnitConvert,
+    ExchangeRateConvert
   },
   data() {
     return {
-      toolList: [],
-      showUnitConvertBox: false
+      showUnitConvertBox: false,
+      showExchangeRateConvertBox: false,
+      showWifiCrackBox: false
     }
   }
 }
@@ -59,11 +72,11 @@ body {
   border-color: transparent;
 }
 
-.fa-recycle {
+.icon {
   color: #977d9a;
 }
 
-.fa-recycle:hover {
+.icon:hover {
   color: #fff0d0;
 }
 
