@@ -15,22 +15,23 @@
       <div class="tool-box">
         <el-button id="tool-button" @click="showWifiCrackBox=true"><font-awesome-icon class="icon" :icon="['fas', 'wifi']" size="3x"/></el-button>
         <p style="color:#b8b6c1;">WIFI 破解</p>
-        <exchange-rate-convert :show.sync="showWifiCrackBox" @close="showWifiCrackBox=false"></exchange-rate-convert>
+        <wifi-crack :show.sync="showWifiCrackBox" @close="showWifiCrackBox=false"></wifi-crack>
       </div>
     </el-main>
   </el-container>
 </template>
 
 <script>
-// import Api from './Api'
 import UnitConvert from './components/unit_convert.vue'
 import ExchangeRateConvert from './components/exchange_rate_convert.vue'
+import WifiCrack from './components/wifi_crack.vue'
 
 export default {
   name: 'App',
   components: {  
     UnitConvert,
-    ExchangeRateConvert
+    ExchangeRateConvert,
+    WifiCrack
   },
   data() {
     return {

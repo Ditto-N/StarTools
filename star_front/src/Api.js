@@ -1,7 +1,7 @@
 // import Vue  from 'vue';  
 import axios from 'axios';  
   
-axios.defaults.baseURL = 'http://47.109.85.237:8000'
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
 
 export default {  
   getToolList () {
@@ -15,6 +15,9 @@ export default {
       to_currency,
       apikey: "CXM65ESPPCN8HRMP"
     })
+  },
+  getNetworks () {
+    return ajax('/wifi', 'get', {})
   }
 }
 

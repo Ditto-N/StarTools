@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-#^kl#7re%5r#7s!5n-po)wb9ol*xx65ilx@$7(0te_chebhed*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['47.109.85.237']
+ALLOWED_HOSTS = ['47.109.85.237', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'home',			# 新增这一行
+    'wifi',			
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -99,23 +100,23 @@ WSGI_APPLICATION = 'star_end.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {  
-    'default': {  
-        'ENGINE': 'django.db.backends.mysql',  
-        'NAME': 'star_db',  
-        'USER': 'root',  
-        'PASSWORD': '1204xin',  
-        'HOST': '47.109.85.237',  # 或者数据库服务器的IP地址  
-        'PORT': '3306',  # MySQL默认端口是3306  
-    }  
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {  
+#     'default': {  
+#         'ENGINE': 'django.db.backends.mysql',  
+#         'NAME': 'star_db',  
+#         'USER': 'root',  
+#         'PASSWORD': '1204xin',  
+#         'HOST': '47.109.85.237',  # 或者数据库服务器的IP地址  
+#         'PORT': '3306',  # MySQL默认端口是3306  
+#     }  
+# }
 
 
 # Password validation

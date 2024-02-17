@@ -62,7 +62,7 @@
 export default {
   data() {
     return {
-      beforeNumber: null,
+      beforeNumber: null, 
       afterNumber: null,
       type: "",
       beforeUnit: "",

@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import ToolListAPI
+from wifi.views import WifiAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('toolList/', ToolListAPI.as_view(), name='tool_list'),
+    path('wifi/', WifiAPI.as_view(), name='wifi'),
 ]
