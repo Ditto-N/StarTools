@@ -50,6 +50,7 @@
 <script>
 import Api from '../Api'
 import { ElMessage } from 'element-plus'
+import { ElLoading } from 'element-plus'
 
 export default {
   data() {
@@ -83,7 +84,16 @@ export default {
       this.afterMoney = null
     },
     async convert() {
+      const loadingInstance = ElLoading.service({
+        lock: true,
+        text: '汇率换算中',
+        background: 'rgba(0, 0, 0, 0.7)',
+      })
+
       const res = await Api.getExchangeRate(this.beforeCurrency, this.afterCurrency)
+
+      loadingInstance.close()
+
       if (res.data.Information) {
         ElMessage.error(res.data.Information)
       } else {
