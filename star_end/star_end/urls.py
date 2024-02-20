@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('toolList/', ToolListAPI.as_view(), name='tool_list'),
     path('wifi/', WifiAPI.as_view(), name='wifi'),
+    path('wifi', WifiAPI.as_view(), name='wifiPwd'),
 ]

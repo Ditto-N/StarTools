@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['47.109.85.237', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,13 +46,14 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',  # 新增这一行配置，网上都说要放在这里，所以我们也放在这里
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True  # 再添加这一行，允许任何域访问
+# APPEND_SLASH=False
 ROOT_URLCONF = 'star_end.urls'
 
 # 允许的请求头
